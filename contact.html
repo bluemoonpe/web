@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Moon | Contáctanos</title>
+    <meta name="description"
+        content="Ponte en contacto con Blue Moon. Envíanos tus dudas, sugerencias o pedidos especiales.">
+    <link rel="icon" type="image/png" href="img/icon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inria+Serif:wght@300;400;700&family=Ms+Madi&family=Caudex:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="img/icon.png">
+    <style>
+        /* Placeholder gris dentro del input/textarea */
+        input::placeholder,
+        textarea::placeholder {
+            color: #ccc;
+            font-family: 'Caudex', serif;
+        }
+    </style>
+</head>
+
+<body class="contact-page">
+    <div class="stars-bg"></div>
+
+
+    <header>
+        <nav>
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menu.html">Menú</a></li>
+                <li><a href="about.html">Nosotros</a></li>
+                <li><a href="gallery.html">Galería</a></li>
+                <li><a href="contact.html" class="active">Contáctanos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <div class="contact-box">
+                <h2 class="section-title">CONTÁCTANOS</h2>
+                <hr class="section-divider">
+                <p class="item-description">¿Tienes una consulta o quieres saber más de nosotros? Envíanos tu mensaje y
+                    te responderemos pronto.</p>
+
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="nombre" name="Nombre" placeholder="Nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="apellido" name="Apellido" placeholder="Apellido" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="email" id="correo" name="Correo" placeholder="Correo electrónico" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="telefono" name="Teléfono" placeholder="Teléfono" pattern="\d{9}"
+                                maxlength="9" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group full">
+                        <textarea id="mensaje" name="Mensaje" rows="5" placeholder="Ingrese su mensaje"
+                            required></textarea>
+                    </div>
+
+                    <button type="submit" class="send-button">ENVIAR</button>
+                </form>
+
+                <script>
+                    document.getElementById('contactForm').addEventListener('submit', function (e) {
+                        e.preventDefault(); // evitar envío por default
+
+                        const nombre = document.getElementById('nombre').value;
+                        const apellido = document.getElementById('apellido').value;
+                        const correo = document.getElementById('correo').value;
+                        const telefono = document.getElementById('telefono').value;
+                        const mensaje = document.getElementById('mensaje').value;
+
+                        // Construir cuerpo del correo con ": "
+                        const body = `Nombre: ${nombre}%0D%0AApellido: ${apellido}%0D%0ACorreo: ${correo}%0D%0ATeléfono: ${telefono}%0D%0AMensaje: ${mensaje}`;
+
+                        window.location.href = `mailto:bluemooncoffeeshop@gmail.com?subject=Contacto Blue Moon&body=${body}`;
+                    });
+                </script>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Made with 💙 by Blue Moon Team</p>
+    </footer>
+
+    <script>
+        window.addEventListener('load', () => document.body.classList.add('loaded'));
+
+        // Estrellas animadas
+        function createStars() {
+            const starsContainer = document.querySelector('.stars-bg');
+            const starCount = 30;
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                star.style.animationDuration = (2 + Math.random() * 2) + 's';
+                if (Math.random() > 0.5) {
+                    star.classList.add('line');
+                    star.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
+                } else {
+                    star.classList.add('dot');
+                }
+                starsContainer.appendChild(star);
+            }
+        }
+        createStars();
+    </script>
+
+    <script>
+        // --- MENÚ HAMBURGUESA RESPONSIVE ---
+        const toggleBtn = document.querySelector('.menu-toggle');
+        const navList = document.querySelector('nav ul');
+
+        toggleBtn.addEventListener('click', () => {
+            navList.classList.toggle('show');
+            const icon = toggleBtn.querySelector('.material-symbols-outlined');
+            icon.textContent = navList.classList.contains('show') ? 'close' : 'menu';
+        });
+    </script>
+</body>
+
+</html>

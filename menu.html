@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Moon | Menú</title>
+    <meta name="description" content="Sabores para llevar, momentos para compartir.">
+    <link rel="icon" type="image/png" href="img/icon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inria+Serif:wght@300;400;700&family=Ms+Madi&family=Caudex:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="img/icon.png">
+</head>
+
+<body class="menu-page">
+    <div class="stars-bg"></div>
+
+    <header>
+        <nav>
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menu.html" class="active">Menú</a></li>
+                <li><a href="about.html">Nosotros</a></li>
+                <li><a href="gallery.html">Galería</a></li>
+                <li><a href="contact.html">Contáctanos</a></li>
+            </ul>
+        </nav>
+
+        <div class="page-header">
+            <h1>CARTA</h1>
+        </div>
+    </header>
+
+    <main>
+        <!-- FILTRO DE SECCIONES -->
+        <section class="menu-filter-section">
+            <div class="menu-filter">
+                <button class="filter-btn active" data-filter="bebidas">Bebidas</button>
+                <button class="filter-btn" data-filter="postres">Postres</button>
+                <button class="filter-btn" data-filter="adicionales">Adicionales</button>
+                <button class="filter-btn" data-filter="todo">Todo</button>
+            </div>
+        </section>
+
+        <!-- BEBIDAS FRÍAS -->
+        <section id="bebidas-frias" class="menu-section bebidas">
+            <div class="container">
+                <h2 class="section-title">BEBIDAS FRÍAS</h2>
+                <hr class="section-divider">
+                <div class="menu-grid">
+
+                    <article class="menu-item">
+                        <div class="item-image">
+                            <img src="img/cold-brew-latte.png" alt="Cold Brew Latte">
+                        </div>
+                        <h3 class="item-name">Cold Brew Latte</h3>
+                        <p class="item-description">Café de extracción en frío con leche, suave y equilibrado.</p>
+                        <p class="item-price">S/. 10.00</p>
+                    </article>
+
+                    <article class="menu-item">
+                        <div class="item-image">
+                            <img src="img/cold-brew-naranja.png" alt="Cold Brew Naranja">
+                        </div>
+                        <h3 class="item-name">Cold Brew Naranja</h3>
+                        <p class="item-description">Café en frío con jugo natural de naranja y notas cítricas.</p>
+                        <p class="item-price">S/. 10.00</p>
+                    </article>
+
+                    <article class="menu-item">
+                        <div class="item-image">
+                            <img src="img/cold-brew-tonic.png" alt="Cold Brew Tónic">
+                        </div>
+                        <h3 class="item-name">Cold Brew Tónic</h3>
+                        <p class="item-description">Café cold brew con agua tónica y un toque cítrico. Refrescante y
+                            burbujeante.</p>
+                        <p class="item-price">S/. 12.00</p>
+                    </article>
+
+                    <article class="menu-item">
+                        <div class="item-image">
+                            <img src="img/hojicha-latte.png" alt="Hojicha Latte">
+                        </div>
+                        <h3 class="item-name">Hojicha Latte</h3>
+                        <p class="item-description">Té verde japonés tostado con leche vaporizada, sabor suave y
+                            aromático.</p>
+                        <p class="item-price">S/. 10.00</p>
+                    </article>
+
+                    <article class="menu-item">
+                        <div class="item-image">
+                            <img src="img/matcha-latte.png" alt="Matcha Latte">
+                        </div>
+                        <h3 class="item-name">Matcha Latte</h3>
+                        <p class="item-description">
+                            Té verde japonés con leche, endulzado con almíbar.<br>
+                            <em>Matcha japonés de alta calidad desde Kyoto, Japón.</em>
+                        </p>
+                        <p class="item-price">S/. 10.00</p>
+                    </article>
+
+                    <article class="menu-item">
+                        <div class="item-image">
+                            <img src="img/strawberry-matcha-latte.png" alt="Strawberry Matcha Latte">
+                        </div>
+                        <h3 class="item-name">Strawberry Matcha Latte</h3>
+                        <p class="item-description">Matcha con leche y una base de fresa natural. Dulce, cremoso y
+                            refrescante.</p>
+                        <p class="item-price">S/. 10.00</p>
+                    </article>
+
+                    <article class="menu-item">
+                        <div class="item-image">
+                            <img src="img/te-frutos-rojos.png" alt="Té de frutos rojos frío">
+                        </div>
+                        <h3 class="item-name">Té de frutos rojos frío</h3>
+                        <p class="item-description">Infusión natural de frutos rojos con hielo. Refrescante y frutal.
+                        </p>
+                        <p class="item-price">S/. 5.00</p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- BEBIDAS CALIENTES -->
+        <section id="bebidas" class="menu-section bebidas">
+            <div class="container">
+                <h2 class="section-title">BEBIDAS CALIENTES</h2>
+                <hr class="section-divider">
+                <div class="menu-grid">
+                    <article class="menu-item">
+                        <div class="item-image">
+                            <img src="img/matcha-latte.png" alt="Matcha Latte">
+                        </div>
+                        <h3 class="item-name">Matcha Latte</h3>
+                        <p class="item-description">
+                            Té verde japonés con leche, endulzado con almíbar.<br>
+                            <em>Matcha japonés de alta calidad desde Kyoto, Japón.</em>
+                        </p>
+                        <p class="item-price">S/. 10.00</p>
+                    </article>
+
+                    <article class="menu-item">
+                        <div class="item-image">
+                            <img src="img/te-frutos-rojos.png" alt="Té de frutos rojos">
+                        </div>
+                        <h3 class="item-name">Té de frutos rojos</h3>
+                        <p class="item-description">Infusión natural de frutos rojos, contiene arándano, fresa, jamaica,
+                            cereza y más.</p>
+                        <p class="item-price">S/. 5.00</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- POSTRES -->
+        <section id="postres" class="menu-section postres">
+            <div class="container">
+                <h2 class="section-title">POSTRES DULCES</h2>
+                <hr class="section-divider">
+                <div class="menu-grid">
+
+                    <article class="menu-item">
+                        <div class="item-image">
+                            <img src="img/dessert-matcha-cookie.png" alt="Matcha Cookies">
+                        </div>
+                        <h3 class="item-name">Matcha Cookies</h3>
+                        <p class="item-description">Galletas suaves de matcha con chispas de chocolate blanco.
+                            Sutilmente dulces y aromáticas.</p>
+                        <p class="item-price">S/. 7.00</p>
+                    </article>
+
+                    <article class="menu-item">
+                        <div class="item-image">
+                            <img src="img/dessert-mochi-cookie.png" alt="Mochi Cookies">
+                        </div>
+                        <h3 class="item-name">Mochi Cookies</h3>
+                        <p class="item-description">
+                            Galletas de chocolate con corazón de mochi.<br>
+                            <em>Disponibles en sabores: piña y mango.</em>
+                        </p>
+                        <p class="item-price">S/. 7.00</p>
+                    </article>
+
+                    <article class="menu-item">
+                        <div class="item-image">
+                            <img src="img/dessert-mochi.png" alt="Mochi">
+                        </div>
+                        <h3 class="item-name">Mochi</h3>
+                        <p class="item-description">
+                            Dulce japonés de arroz con textura suave y chiclosa, relleno de mermelada o crema.<br>
+                            <em>Sabores disponibles: Oreo, mango, piña, fresa y arándano.</em>
+                        </p>
+                        <p class="item-price">S/. 5.00</p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ADICIONALES -->
+        <section id="adicionales" class="menu-section adicionales">
+            <div class="container">
+                <h2 class="section-title">ADICIONALES</h2>
+                <div class="menu-grid">
+                    <article class="menu-item special">
+                        <div class="item-image small">
+                            <img src="img/milk.png" alt="Leche vegetal">
+                        </div>
+                        <p class="item-description special-text">
+                            <strong>Leche vegetal</strong> <br>〈 Disponible en almendra y coco 〉<br>
+                            <em>Para acompañar tus bebidas</em> <br> <strong>S/. 2.00 +</strong>
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <a href="https://www.instagram.com/bluemoon.ica/" class="order-button" target="_blank" rel="noopener">
+                    ¡Ordena tu pedido aquí!
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Made with 💙 by Blue Moon Team</p>
+    </footer>
+
+    <!-- === SCRIPT PRINCIPAL === -->
+    <script>
+        // estrellas
+        window.addEventListener('load', () => document.body.classList.add('loaded'));
+
+        function createStars() {
+            const starsContainer = document.querySelector('.stars-bg');
+            const starCount = 30;
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                star.style.animationDuration = (2 + Math.random() * 2) + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+        createStars();
+
+        // animaciones de entrada
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.menu-item').forEach(item => observer.observe(item));
+
+        // filtrado de secciones
+        document.addEventListener("DOMContentLoaded", () => {
+            const buttons = document.querySelectorAll(".filter-btn");
+            const sections = document.querySelectorAll(".menu-section");
+
+            buttons.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    buttons.forEach(b => b.classList.remove("active"));
+                    btn.classList.add("active");
+                    const filter = btn.dataset.filter;
+
+                    sections.forEach(sec => {
+                        if (filter === "todo" || sec.classList.contains(filter)) {
+                            sec.style.display = "block";
+                        } else {
+                            sec.style.display = "none";
+                        }
+                    });
+                });
+            });
+
+            // solo mostrar bebidas al inicio
+            sections.forEach(sec => {
+                if (!sec.classList.contains("bebidas")) sec.style.display = "none";
+            });
+        });
+    </script>
+
+    <script>
+        // --- MENÚ HAMBURGUESA RESPONSIVE ---
+        const toggleBtn = document.querySelector('.menu-toggle');
+        const navList = document.querySelector('nav ul');
+
+        toggleBtn.addEventListener('click', () => {
+            navList.classList.toggle('show');
+            const icon = toggleBtn.querySelector('.material-symbols-outlined');
+            icon.textContent = navList.classList.contains('show') ? 'close' : 'menu';
+        });
+    </script>
+</body>
+
+</html>

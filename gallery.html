@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Moon | Galería</title>
+    <meta name="description"
+        content="Explora nuestra galería de momentos, bebidas y ambiente de Blue Moon Coffee Shop.">
+    <link rel="icon" type="image/png" href="img/icon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inria+Serif:wght@300;400;700&family=Ms+Madi&family=Caudex:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="img/icon.png">
+    <style>
+        /* ===== GALERÍA ===== */
+        .gallery-section {
+            text-align: center;
+            padding: 5rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .gallery-section h2 {
+            font-family: 'Caudex', serif;
+            font-size: 2.8rem;
+            letter-spacing: 2px;
+            color: var(--text-cream);
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-section .section-divider {
+            width: 80px;
+            height: 2px;
+            background-color: var(--accent-red);
+            margin: 0 auto 1.5rem;
+            border: none;
+        }
+
+        .gallery-section p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            justify-items: center;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            aspect-ratio: 9 / 16;
+            background-color: rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .gallery-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .gallery-section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="gallery-page">
+    <div class="stars-bg"></div>
+    <header>
+        <nav>
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menu.html">Menú</a></li>
+                <li><a href="about.html">Nosotros</a></li>
+                <li><a href="gallery.html" class="active">Galería</a></li>
+                <li><a href="contact.html">Contáctanos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="gallery-page-section">
+            <h2 class="section-title">GALERÍA</h2>
+            <hr class="section-divider">
+            <p>Un vistazo a nuestros momentos más especiales.</p>
+
+            <div class="gallery-page-grid">
+                <div class="gallery-page-item"><img src="img/gallery6.jpg" alt="Gallery 6"></div>
+                <div class="gallery-page-item"><img src="img/gallery5.jpg" alt="Gallery 5"></div>
+                <div class="gallery-page-item"><img src="img/gallery4.jpg" alt="Gallery 4"></div>
+                <div class="gallery-page-item"><img src="img/gallery3.jpg" alt="Gallery 3"></div>
+                <div class="gallery-page-item"><img src="img/gallery2.jpg" alt="Gallery 2"></div>
+                <div class="gallery-page-item"><img src="img/gallery1.jpg" alt="Gallery 1"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Made with 💙 by Blue Moon Team</p>
+    </footer>
+
+    <script>
+        // Mostrar contenido al cargar
+        window.addEventListener('load', () => document.body.classList.add('loaded'));
+
+        // Fondo de estrellas (igual que las otras páginas)
+        function createStars() {
+            const starsContainer = document.querySelector('.stars-bg');
+            const starCount = 30;
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                star.style.animationDuration = (2 + Math.random() * 2) + 's';
+                if (Math.random() > 0.5) {
+                    star.classList.add('line');
+                    star.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
+                } else {
+                    star.classList.add('dot');
+                }
+                starsContainer.appendChild(star);
+            }
+        }
+        createStars();
+    </script>
+
+    <script>
+        // --- MENÚ HAMBURGUESA RESPONSIVE ---
+        const toggleBtn = document.querySelector('.menu-toggle');
+        const navList = document.querySelector('nav ul');
+
+        toggleBtn.addEventListener('click', () => {
+            navList.classList.toggle('show');
+            const icon = toggleBtn.querySelector('.material-symbols-outlined');
+            icon.textContent = navList.classList.contains('show') ? 'close' : 'menu';
+        });
+    </script>
+</body>
+
+</html>

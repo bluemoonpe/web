@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Moon | Nosotros</title>
+    <meta name="description"
+        content="Conoce la misión y visión de Blue Moon Coffee Shop. Calidad y compromiso en cada taza.">
+    <link rel="icon" type="image/png" href="img/icon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inria+Serif:wght@300;400;700&family=Ms+Madi&family=Caudex:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="img/icon.png">
+</head>
+
+<body class="about-page">
+    <div class="stars-bg"></div>
+
+    <header>
+        <nav>
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menu.html">Menú</a></li>
+                <li><a href="about.html" class="active">Nosotros</a></li>
+                <li><a href="gallery.html">Galería</a></li>
+                <li><a href="contact.html">Contáctanos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-section">
+            <div class="container">
+                <h1 class="section-title">NOSOTROS</h1>
+                <hr class="section-divider">
+
+                <div class="about-item">
+                    <div class="about-text highlight">
+                        <h2>Misión</h2>
+                        <p>
+                            En <strong>Blue Moon Coffee Shop</strong> nuestra misión es ofrecer a cada cliente una
+                            experiencia única y memorable, combinando atención cálida y personalizada con productos
+                            frescos y de alta calidad. Nos esforzamos por ser más que una cafetería: buscamos crear un
+                            espacio donde cada taza de café refleje nuestra dedicación, pasión por la excelencia y
+                            compromiso con quienes nos visitan.
+                        </p>
+                    </div>
+                    <div class="about-image">
+                        <img src="img/about/gallery1.png" alt="Imagen Misión">
+                    </div>
+                </div>
+
+                <div class="about-item reverse">
+                    <div class="about-text">
+                        <h2>Visión</h2>
+                        <p>
+                            Nuestra visión es consolidarnos como una cafetería reconocida a nivel nacional por la
+                            excelencia y calidad de nuestros productos, destacando la autenticidad de nuestros sabores
+                            y la profesionalidad en el servicio. Aspiramos a expandir nuestra presencia con sucursales a
+                            lo largo de Perú, manteniendo siempre los estándares que nos convierten en un referente de
+                            café artesanal y atención dedicada a nuestros clientes.
+                        </p>
+                    </div>
+                    <div class="about-image">
+                        <img src="img/about/gallery2.png" alt="Imagen Visión">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Made with 💙 by Blue Moon Team</p>
+    </footer>
+
+    <script>
+        // Simple fade-in animation on load
+        window.addEventListener('load', function () {
+            document.body.classList.add('loaded');
+        });
+
+        // Animated stars background
+        function createStars() {
+            const starsContainer = document.querySelector('.stars-bg');
+            const starCount = 30;
+
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                star.style.animationDuration = (2 + Math.random() * 2) + 's';
+
+                if (Math.random() > 0.5) {
+                    star.classList.add('line');
+                    star.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
+                } else {
+                    star.classList.add('dot');
+                }
+
+                starsContainer.appendChild(star);
+            }
+        }
+
+        createStars();
+    </script>
+
+    <script>
+        // --- MENÚ HAMBURGUESA RESPONSIVE ---
+        const toggleBtn = document.querySelector('.menu-toggle');
+        const navList = document.querySelector('nav ul');
+
+        toggleBtn.addEventListener('click', () => {
+            navList.classList.toggle('show');
+            const icon = toggleBtn.querySelector('.material-symbols-outlined');
+            icon.textContent = navList.classList.contains('show') ? 'close' : 'menu';
+        });
+    </script>
+</body>
+
+</html>
