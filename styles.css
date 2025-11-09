@@ -8,9 +8,13 @@
 }
 
 :root {
-    --primary-blue: #2c3e64;
-    --dark-blue: #1b244b;
-    --light-blue: #5a7ba8;
+    --primary-blue: #2F4156;
+    /*Prev: --primary-blue: #2c3e64;*/
+    /*Prev: --dark-blue: #1b244b;*/
+    /*Prev: --light-blue: #5a7ba8;*/
+    --dark-blue: #202F41;
+    --light-blue: #C7D9E5;
+    --dark-yellow: #D2AE38;
     --accent-red: #d4203f;
     --text-light: #e8e6e3;
     --text-white: #ffffff;
@@ -24,7 +28,8 @@ html {
 
 body {
     font-family: 'Inria Serif', serif;
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+    /*background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);*/
+    background: var(--primary-blue);
     color: var(--text-white);
     min-height: 100vh;
     position: relative;
@@ -631,7 +636,7 @@ body.home .hero-banner {
     font-size: 1rem;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: var(--text-cream);
+    color: var(--dark-yellow);
     margin-bottom: 0.3rem;
 }
 
@@ -698,7 +703,7 @@ body.home .hero-banner {
 
 .product-row .line .dots {
     flex: 1;
-    border-bottom: 1px dotted rgba(255, 255, 255, 0.6);
+    border-bottom: 1px dotted var(--dark-yellow);
     margin: 0 0.5rem;
     transform: translateY(-2px);
 }
@@ -1092,7 +1097,8 @@ body.home .hero-banner {
 
 .item-image.small {
     max-width: 180px;
-    margin: 0 auto 1rem auto; /* 🔹 centra la imagen pequeña */
+    margin: 0 auto 1rem auto;
+    /* 🔹 centra la imagen pequeña */
     display: flex;
     justify-content: center;
 }
@@ -1141,7 +1147,8 @@ body.home .hero-banner {
     text-align: center;
     margin: 1.8rem auto 2.2rem;
     max-width: 1100px;
-    overflow: visible; /* ✅ permite ver todo el scroll horizontal */
+    overflow: visible;
+    /* ✅ permite ver todo el scroll horizontal */
     width: 100%;
 }
 
@@ -1183,7 +1190,8 @@ body.home .hero-banner {
 @media (max-width: 768px) {
     .menu-filter-section {
         width: 100%;
-        overflow-x: auto; /* permite desplazamiento */
+        overflow-x: auto;
+        /* permite desplazamiento */
         -webkit-overflow-scrolling: touch;
         padding: 0 0.5rem;
     }
@@ -1195,8 +1203,10 @@ body.home .hero-banner {
         overflow-x: auto;
         gap: 0.8rem;
         scroll-snap-type: x mandatory;
-        scroll-padding-left: 1.5rem;  /* ✅ da respiro al primer botón */
-        padding: 0 1.5rem 0.4rem 1.5rem; /* ✅ equilibrado en ambos lados */
+        scroll-padding-left: 1.5rem;
+        /* ✅ da respiro al primer botón */
+        padding: 0 1.5rem 0.4rem 1.5rem;
+        /* ✅ equilibrado en ambos lados */
         scrollbar-width: none;
         -ms-overflow-style: none;
     }
@@ -1233,7 +1243,8 @@ body.home .hero-banner {
 .adicionales .menu-item.special {
     display: flex;
     flex-direction: column;
-    align-items: center; /* 🔹 centra verticalmente */
+    align-items: center;
+    /* 🔹 centra verticalmente */
     text-align: center;
 }
 
@@ -1316,7 +1327,8 @@ body.home .hero-banner {
     padding: 4rem 1.5rem;
     max-width: 1100px;
     margin: 0 auto;
-    overflow-x: hidden; /* 🔹 evita desbordamiento lateral */
+    overflow-x: hidden;
+    /* 🔹 evita desbordamiento lateral */
 }
 
 .about-item {
@@ -1335,7 +1347,8 @@ body.home .hero-banner {
 /* === CONTENEDOR DE TEXTO === */
 .about-text {
     flex: 1;
-    min-width: 0; /* 🔹 permite encogerse libremente */
+    min-width: 0;
+    /* 🔹 permite encogerse libremente */
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -1363,7 +1376,8 @@ body.home .hero-banner {
 /* === IMAGEN === */
 .about-image {
     flex: 1;
-    min-width: 0; /* 🔹 previene ancho mínimo forzado */
+    min-width: 0;
+    /* 🔹 previene ancho mínimo forzado */
     display: flex;
     align-items: stretch;
     justify-content: center;
@@ -1374,12 +1388,13 @@ body.home .hero-banner {
     height: 100%;
     object-fit: cover;
     border-radius: 0;
-    max-width: 100%; /* 🔹 nunca más ancho que la pantalla */
+    max-width: 100%;
+    /* 🔹 nunca más ancho que la pantalla */
 }
 
 /* === BLOQUE TRANSLÚCIDO SOLO PARA MISIÓN === */
 .about-text.highlight {
-    background: rgba(0, 0, 0, 0.25);
+    background: var(--dark-blue);
     padding: 2rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
@@ -1392,6 +1407,7 @@ body.home .hero-banner {
    RESPONSIVE
    ============================================ */
 @media (max-width: 900px) {
+
     .about-item,
     .about-item.reverse {
         flex-direction: column;
@@ -1426,7 +1442,9 @@ body.home .hero-banner {
    OPTIMIZACIÓN PARA PANTALLAS MUY PEQUEÑAS
    ============================================ */
 @media (max-width: 360px) {
-    html, body {
+
+    html,
+    body {
         width: 100%;
         overflow-x: hidden;
     }
@@ -1599,9 +1617,9 @@ textarea {
 }
 
 .contact-box {
-    background-color: #29395f;
+    background-color: var(--dark-blue);
     /* azul oscuro */
-    border: 0.5px solid rgba(255, 255, 255, 0.8);
+    border: 0;
     border-radius: 0;
     /* sin redondeo */
     padding: 3rem 2.5rem;
@@ -1638,7 +1656,7 @@ textarea {
 /* Inputs y textarea */
 input,
 textarea {
-    background: rgba(24, 36, 66, 0.767);
+    background: rgba(0, 0, 0, 0.219);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 0;
     /* sin redondeo */
